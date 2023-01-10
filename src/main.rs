@@ -17,6 +17,8 @@ fn handle_connection(mut stream: TcpStream) {
 
     stream.read(&mut buf).unwrap();
 
+    println!("{}", String::from_utf8_lossy(&buf));
+
     let output = b"Response test";
 
     stream.write_all(output).unwrap();
