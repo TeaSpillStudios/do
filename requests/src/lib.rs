@@ -1,6 +1,8 @@
 pub struct Request {
-    operation: Operation,
-    data: Option<String>,
+    pub operation: Operation,
+    pub section: Option<String>,
+    pub name: Option<String>,
+    pub data: Option<String>,
 }
 
 pub enum Operation {
@@ -8,8 +10,23 @@ pub enum Operation {
     Remove,
 }
 
-pub enum Requests<'a> {
-    Send(&'a str),
+pub enum Requests {
+    Send(Request),
     Recieve,
 }
 
+impl Request {
+    pub fn new(
+        operation: Operation,
+        section: Option<String>,
+        name: Option<String>,
+        data: Option<String>,
+    ) -> Request {
+        Request {
+            operation,
+            section,
+            name,
+            data,
+        }
+    }
+}
