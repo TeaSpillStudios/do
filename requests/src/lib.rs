@@ -1,3 +1,6 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
 pub struct Request {
     pub operation: Operation,
     pub section: Option<String>,
@@ -5,11 +8,13 @@ pub struct Request {
     pub data: Option<String>,
 }
 
+#[derive(Serialize, Deserialize)]
 pub enum Operation {
     Add,
     Remove,
 }
 
+#[derive(Serialize, Deserialize)]
 pub enum Requests {
     Send(Request),
     Recieve,
