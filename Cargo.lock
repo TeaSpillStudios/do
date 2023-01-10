@@ -5,3 +5,10 @@ version = 3
 [[package]]
 name = "do_bin"
 version = "0.1.0"
+dependencies = [
+ "requests",
+]
+
+[[package]]
+name = "requests"
+version = "0.1.0"
