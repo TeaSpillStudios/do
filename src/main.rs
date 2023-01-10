@@ -1,4 +1,4 @@
-// use std::fs;
+use requests::*;
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 
